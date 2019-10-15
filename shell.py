@@ -2,6 +2,11 @@ import os
 import time
 
 
+MONTH = ('', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+WEEKDAY = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')
+
+
 def get_mode(filename):
     try:
         return os.stat(filename)[0]
@@ -81,6 +86,25 @@ def write(filename):
     with open(filename, 'w+') as txtfile:
         txtfile.write('\n'.join(content)+'\n')
 
+
+def mkdir(target):
+    mode = get_mode(target)
+    if not mode_exists(mode):
+        os.mkdir(target)
+    else:
+        print('%s already exists.' % target)
+
+def pwd():
+    print(os.getcwd())
+
+def rm(filename):
+    try:
+        os.remove(filename)
+    except:
+        try:
+            os.rmdir(filename)
+        except:
+            print('%s is not a file or directory.' % filename)
 
 def run():
     while True:

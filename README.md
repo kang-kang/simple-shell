@@ -1,4 +1,4 @@
-# simple-shell
+# Simple Shell for MicroPython
 
 Simple shell for MicroPython, tested at ESP32, should work on ESP8266.
 
@@ -18,6 +18,15 @@ show file content
 
 ### write <file>
 create a text file, use ^D on new line to finish input, ^C to exit
+
+### mkdir <dir>
+make dir
+
+### rm <path>
+remove file or dir
+
+### pwd
+get current work dir
 
 ## Example
 ```python

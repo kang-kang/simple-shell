@@ -52,7 +52,7 @@ def print_long(filenames):
               localtime[2], localtime[4], localtime[5], filename, mode_str, extra_str))
 
 
-def ls(path='/'):
+def ls(path='.'):
     print_long(os.listdir(path))
 
 
